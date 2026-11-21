@@ -1,6 +1,6 @@
 # Private PI0.5 scaffold for Reality Check
 
-This local scaffold contains a real LeRobot π0.5 inference adapter behind the
+This private repository contains a LeRobot π0.5 inference adapter behind the
 starter SDK's contract v0 / observation-action schema v2. The checkpoint is
 loaded from the runner's read-only `/weights` mount. No policy weights or gated
 tokenizer assets are in this source tree.
@@ -90,11 +90,12 @@ a 50-action queue. Measure cold load, warmup, and per-call latency on GB10.
 
 ## Inspected artifacts
 
-`reference/pi05_base/` has only the official model card, config, and saved
-processor JSON from the revision above. They are excluded from Docker. The
-config specifies `google/paligemma-3b-pt-224`; the π0.5 model repo itself is
+The official model card, config, and saved processor JSON can be inspected at
+https://huggingface.co/lerobot/pi05_base. The config specifies `google/paligemma-3b-pt-224`; the π0.5 model repo itself is
 public, but this tokenizer repo is gated/manual. LeRobot 0.7.0's official
 processor and policy implementations are used.
 
-This directory is a local review scaffold. It has not been submitted to
-GitHub, Hugging Face, or the Reality Check dashboard.
+This private repository is an organizer test scaffold. It has not yet been
+validated with the full model or submitted through the Reality Check dashboard.
+The current dashboard accepts only public repositories, so this private repo
+cannot currently be submitted there.
