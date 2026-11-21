@@ -1,0 +1,8 @@
+.git
+__pycache__
+*.py[cod]
+.venv
+weights
+reference
+pali-tokenizer-cache
+practice-journals

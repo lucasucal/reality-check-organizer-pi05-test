@@ -1,0 +1,15 @@
+# Local private Spark base only: this image contains gated PaliGemma tokenizer
+# assets fetched by an authorized account. Never commit the assets or publish
+# this image. The source package is in the primary build context; tokenizer
+# assets come from an external, local BuildKit named context.
+FROM rc-lerobot:train
+
+ENV HF_HOME=/opt/hf-cache
+ENV RC_PI05_TOKENIZER_PATH=/opt/pali-tokenizer
+COPY --from=pali-tokenizer . /opt/pali-tokenizer/
+
+# Install only general image support libraries if absent in rc-lerobot:train.
+# The LeRobot/PyTorch/CUDA stack is inherited from that preinstalled image.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        libglib2.0-0 libgomp1 \
+    && rm -rf /var/lib/apt/lists/*

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+build/
+*.egg-info/
+.venv/
+venv/
+
+# NEVER commit weights to this repo — they live on Hugging Face.
+weights/
+pali-tokenizer-cache/
+*.pt
+*.safetensors
+*.ckpt
+
+# Local reference metadata is not part of the policy repository.
+reference/

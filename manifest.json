@@ -1,0 +1,11 @@
+{
+  "_comment_contract": "Contract version. Fixed at v0 by docs/platform.md §6.1. Do not change unless told to.",
+  "contract": "v0",
+  "_comment_port": "Port your policy container serves on. The runner connects here.",
+  "port": 8080,
+  "_comment_weights": "Legacy placeholder fields; they do not select the judged model. Provide your public, ungated Hugging Face model link in the dashboard. Each new submission resolves the current snapshot at that link and mounts it at /weights. Never commit weights here.",
+  "weights": {
+    "repo_id": "YOUR-HF-USERNAME/your-weights",
+    "revision": "YOUR-FULL-HF-COMMIT-SHA"
+  }
+}
